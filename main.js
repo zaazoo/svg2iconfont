@@ -1,0 +1,1 @@
+require('./webfont.font.js');
