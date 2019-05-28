@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const rootDir = path.resolve(__dirname, '../')
 
 module.exports = {
-  entry: './src/toFonts/main.js',
+  entry: path.resolve(rootDir, 'src/toFonts/main.js'),
   output: {
     path: path.resolve(rootDir, 'dist/fonts')
   },

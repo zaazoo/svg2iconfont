@@ -7,12 +7,14 @@
     "toFont": "webpack --config build/webpack.toFonts.js && node build/replace.js",
     "toBase64": "webpack --config build/webpack.toBase64.js"
   },
-  "bin": {},
-  "author": "",
+  "bin": {
+    "svg2font": "bin/svg2font",
+    "svg2base64": "bin/svg2base64"
+  },
+  "author": "akey",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.2",
-    "commander": "^2.20.0",
     "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -25,5 +27,9 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.4.1"
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.20.0"
   }
 }
