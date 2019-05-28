@@ -1,12 +1,12 @@
 module.exports = {
   'files': [
-    './svg/*.svg'
+    '../svg/*.svg'
   ],
-  'url': './',
   'fontName': 'myfonticons',
   'classPrefix': 'myfonticon-',
   'baseSelector': '.myfonticon',
-  'types': ['eot', 'woff', 'woff2', 'ttf', 'svg'],
+  // 'types': ['eot', 'woff', 'woff2', 'ttf', 'svg'],
+  'types': ['ttf'],
   'cssTemplate': './css.hbs',
-  'fileName': '[fontname].[ext]'
+  'fileName': 'typeface/[fontname].[ext]'
 };

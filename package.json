@@ -4,14 +4,19 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "npm run build && webpack-dev-server --watch--hot --open",
-    "build": "webpack --config webpack.config.js"
+    "toFont": "webpack --config build/webpack.toFonts.js && node build/replace.js",
+    "toBase64": "webpack --config build/webpack.toBase64.js"
   },
+  "bin": {},
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "clean-webpack-plugin": "^2.0.2",
+    "commander": "^2.20.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^3.0.2",
+    "fs": "0.0.1-security",
     "html-webpack-plugin": "^3.2.0",
     "http-server": "^0.11.1",
     "mini-css-extract-plugin": "^0.6.0",

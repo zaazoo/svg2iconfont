@@ -1,0 +1,6 @@
+#!/usr/bin/env node
+
+const program = require("commander")
+const svgDir = program.args[0]
+const outputDir = program.args[1]
+

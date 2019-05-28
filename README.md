@@ -6,6 +6,19 @@
 
 运行:
 ```bash
-npm run build  # 仅打包
-npm run start  # 打包并启动预览
+npm run toFont    # 将svg打包成ttf及其他类型的字体包
+npm run toBase64  # 字体包转为base64
 ```
+
+***
+
+输出目录：  
+- dist  
+  - fonts  
+    - css
+      - font.css    // 字体样式
+    - typeface  
+      - myfonticons.ttf  // 字体包
+  - base64
+    - css  
+      - main.css    // base64的字体样式
