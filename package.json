@@ -1,6 +1,6 @@
 {
   "name": "svg-iconfont",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "svg to iconfont and base64",
   "main": "main.js",
   "repository": {
