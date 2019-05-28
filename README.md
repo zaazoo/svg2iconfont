@@ -4,21 +4,4 @@
 
 ***
 
-运行:
-```bash
-npm run toFont    # 将svg打包成ttf及其他类型的字体包
-npm run toBase64  # 字体包转为base64
-```
-
-***
-
-输出目录：  
-- dist  
-  - fonts  
-    - css
-      - font.css    // 字体样式
-    - typeface  
-      - myfonticons.ttf  // 字体包
-  - base64
-    - css  
-      - main.css    // base64的字体样式
+测试中，暂勿下载

@@ -1,8 +1,12 @@
 {
-  "name": "iconfont",
-  "version": "1.0.0",
-  "description": "",
+  "name": "svg-iconfont",
+  "version": "1.0.3",
+  "description": "svg to iconfont and base64",
   "main": "main.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaazoo/svg2iconfont.git"
+  },
   "scripts": {
     "toFont": "webpack --config build/webpack.toFonts.js && node build/replace.js",
     "toBase64": "webpack --config build/webpack.toBase64.js"
@@ -11,8 +15,17 @@
     "svg2font": "bin/svg2font",
     "svg2base64": "bin/svg2base64"
   },
-  "author": "akey",
+  "keywords": [
+    "svg2font",
+    "svg2iconfont",
+    "font2base64"
+  ],
+  "author": "zaazoo",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zaazoo/svg2iconfont/issues"
+  },
+  "homepage": "https://github.com/zaazoo/svg2iconfont#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^2.0.2",
     "cross-env": "^5.2.0",
@@ -24,8 +37,8 @@
     "mini-css-extract-plugin": "^0.6.0",
     "url-loader": "^1.1.2",
     "webfonts-loader": "^4.4.0",
-    "webpack": "^4.32.2",
-    "webpack-cli": "^3.3.2",
+    "webpack": "4.32.2",
+    "webpack-cli": "3.3.2",
     "webpack-dev-server": "^3.4.1"
   },
   "dependencies": {

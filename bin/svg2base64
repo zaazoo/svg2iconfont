@@ -1,1 +1,34 @@
 #!/usr/bin/env node
+const program = require('commander')
+const path = require("path")
+const chalk = require("chalk")
+const {exec, execSync, spawn} = require("child_process")
+
+program
+  .version('0.1.0')
+  .option('-r, --svgdir [type]', 'Add svgdir')
+  .option('-o, --outputdir [type]', 'Add outputdir')
+  .parse(process.argv);
+
+console.log('you ordered a pizza with:');
+if (program.svgdir) console.log('  - svgdir', program.svgdir);
+if (program.outputdir) console.log('  - outputdir', program.outputdir);
+// console.log('  - ...args', program.args);
+
+
+const local = process.cwd()
+const enter = path.resolve(local)
+const bin = path.resolve(local, "node_modules", ".bin")
+const wbp = path.resolve(bin, "webpack")
+
+console.log('enter---', enter)
+
+
+console.log(chalk.white("开始编译Base64..."))
+const cmd = `${wbp} --config ${enter}/build/webpack.toBase64.js`
+
+const run = exec(cmd)
+run.stdout.pipe(process.stdout)
+run.stderr.pipe(process.stderr)
+
+

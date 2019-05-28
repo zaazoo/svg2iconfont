@@ -17,14 +17,14 @@ if (program.outputdir) console.log('  - outputdir', program.outputdir);
 
 
 const local = process.cwd()
-const enter = path.resolve(local, "node_modules", "@tencent", "svg2iconfont")
+const enter = path.resolve(local)
 const bin = path.resolve(local, "node_modules", ".bin")
-const wbp = path.resolve(enter, "node_modules", ".bin", "webpack")
+const wbp = path.resolve(bin, "webpack")
 
 console.log('enter---', enter)
 
 
-console.log(chalk.white("🌛 开始构建项目"))
+console.log(chalk.white("开始编译iconFont..."))
 const cmd = `${wbp} --config ${enter}/build/webpack.toFonts.js && node ${enter}/build/replace.js`
 
 const run = exec(cmd)
