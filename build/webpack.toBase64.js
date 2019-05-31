@@ -36,6 +36,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].css',
     }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.resolve(rootDir, '../../src/assets/s2f-base64')]
+    }),
     new HtmlWebpackPlugin({
       inject: "body",
       template: path.resolve(rootDir, "src/toBase64/index.html"),

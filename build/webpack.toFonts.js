@@ -55,7 +55,7 @@ module.exports = {
       filename: 'css/[name].css',
     }),
     new CleanWebpackPlugin({
-      cleanOnceBeforeBuildPatterns: ['fontDist']
+      cleanOnceBeforeBuildPatterns: [path.resolve(rootDir, '../../src/assets/s2f-iconfont')]
     }),
     new HtmlWebpackPlugin({
       inject: "body",
