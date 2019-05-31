@@ -5,9 +5,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const rootDir = path.resolve(__dirname, '../')
 
 module.exports = {
-  entry: './src/toBase64/main.js',
+  entry: path.resolve(rootDir, 'src/toBase64/main.js'),
   output: {
-    path: path.resolve(rootDir, 'dist/base64')
+    path: path.resolve(rootDir, '../../src/assets/s2f-base64')
   },
   module: {
     rules: [

@@ -10,25 +10,26 @@ program
   .option('-o, --outputdir [type]', 'Add outputdir')
   .parse(process.argv);
 
-console.log('you ordered a pizza with:');
-if (program.svgdir) console.log('  - svgdir', program.svgdir);
-if (program.outputdir) console.log('  - outputdir', program.outputdir);
+// 预留，后续可配置输入输出文件夹
+// if (program.svgdir) console.log('  - svgdir', program.svgdir);
+// if (program.outputdir) console.log('  - outputdir', program.outputdir);
 // console.log('  - ...args', program.args);
 
-
 const local = process.cwd()
-const enter = path.resolve(local)
+const enter = path.resolve(local)  // project
+// console.log('enter---', enter)
+const self = path.resolve(local, "node_modules", "svg-iconfont")  // this package
 const bin = path.resolve(local, "node_modules", ".bin")
 const wbp = path.resolve(bin, "webpack")
 
-console.log('enter---', enter)
+// do build
+console.log(chalk.white.bgBlue.bold('svg entry文件夹："src/assets/s2f-svg"...'))
+console.log(chalk.white.bgBlue.bold('iconFont output文件夹："src/assets/s2f-iconfont"'))
 
-
-console.log(chalk.white("开始编译iconFont..."))
-const cmd = `${wbp} --config ${enter}/build/webpack.toFonts.js && node ${enter}/build/replace.js`
+console.log(chalk.white.bgRed.bold('开始编译iconFont...'))
+const cmd = `${wbp} --config ${self}/build/webpack.toFonts.js && node ${self}/build/replace.js && node ${self}/build/delete.js`
 
 const run = exec(cmd)
 run.stdout.pipe(process.stdout)
 run.stderr.pipe(process.stderr)
-
 

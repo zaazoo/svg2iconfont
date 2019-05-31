@@ -1,31 +1,20 @@
 #!/usr/bin/env node
-const program = require('commander')
 const path = require("path")
 const chalk = require("chalk")
 const {exec, execSync, spawn} = require("child_process")
 
-program
-  .version('0.1.0')
-  .option('-r, --svgdir [type]', 'Add svgdir')
-  .option('-o, --outputdir [type]', 'Add outputdir')
-  .parse(process.argv);
-
-console.log('you ordered a pizza with:');
-if (program.svgdir) console.log('  - svgdir', program.svgdir);
-if (program.outputdir) console.log('  - outputdir', program.outputdir);
-// console.log('  - ...args', program.args);
-
-
 const local = process.cwd()
-const enter = path.resolve(local)
+const enter = path.resolve(local)  // project
+// console.log('enter---', enter)
+const self = path.resolve(local, "node_modules", "svg-iconfont")  // this package
 const bin = path.resolve(local, "node_modules", ".bin")
 const wbp = path.resolve(bin, "webpack")
 
-console.log('enter---', enter)
+// do build
+console.log(chalk.white.bgBlue.bold('iconFont base64 output文件夹："src/assets/s2f-base64"'))
 
-
-console.log(chalk.white("开始编译Base64..."))
-const cmd = `${wbp} --config ${enter}/build/webpack.toBase64.js`
+console.log(chalk.white.bgRed.bold('开始编译Base64...'))
+const cmd = `${wbp} --config ${self}/build/webpack.toBase64.js && node ${self}/build/delete.js`
 
 const run = exec(cmd)
 run.stdout.pipe(process.stdout)

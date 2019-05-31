@@ -7,7 +7,7 @@ const rootDir = path.resolve(__dirname, '../')
 module.exports = {
   entry: path.resolve(rootDir, 'src/toFonts/main.js'),
   output: {
-    path: path.resolve(rootDir, 'dist/fonts')
+    path: path.resolve(rootDir, '../../src/assets/s2f-iconfont')
   },
   module: {
     rules: [
